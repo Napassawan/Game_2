@@ -1,18 +1,16 @@
+
 #pragma once
 
-#include <iostream>
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include "Animation.h"
 
 class Player
 {
 private:
 	sf::RectangleShape Char;
-	sf::Texture ChTex;
 
 	float movementSpeed;
 	int hp;
@@ -22,13 +20,15 @@ private:
 	void initShape();
 
 public:
-	Player();
+	Player(float x = 0.f, float y = 0.f);
 	virtual ~Player();
 
+	//Accessors
 	const sf::RectangleShape& getShape() const;
 	const int& getHp() const;
 	const int& getHpMax() const;
 
+	//Functions
 	void takeDamage(const int damage);
 	void gainHealth(const int health);
 
@@ -37,4 +37,3 @@ public:
 	void update(const sf::RenderTarget* target);
 	void render(sf::RenderTarget* target);
 };
-

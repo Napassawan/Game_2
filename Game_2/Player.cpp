@@ -13,19 +13,17 @@ void Player::initShape()
 {
 
 	this->Char.setSize(sf::Vector2f(70.f, 100.f));
-	if (!this->ChTex.loadFromFile("img/char1.png"))
+	/*if (!this->ChTex.loadFromFile("img/char1.png"))
 	{
 		printf_s("ERROR::GAME::CHAR");
 	}
-	this->Char.setTexture(&this->ChTex);
+	this->Char.setTexture(&this->ChTex);*/
 }
 
-Player::Player() 
+Player::Player(float x, float y)
 {
-	this->Char.setSize(sf::Vector2f(200.f, 290.f));
-	this->Char.setOrigin(Char.getSize() / 2.0f);
-	this->Char.setPosition(450.f, 300.f);
-	
+	this->Char.setPosition(x, y);
+
 	this->initVariables();
 	this->initShape();
 }
